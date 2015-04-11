@@ -17,10 +17,8 @@ def get_bills(state, type):
     json_object = json.load(response)
 
     for bills in json_object:
-      if bills['state'] == 'mo':
-        print bills
-
-        if bills['subjects'] == 'Transportation':
+      if bills['state'] == 'mo': 
+        if 'Transportation' in bills['subjects']:
           print bills['title']
 
     '''
