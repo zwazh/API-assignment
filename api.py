@@ -15,7 +15,7 @@ def get_bills(state, subjects):
       - Retrieve an API response with bills from the current legislative session in Missouri
       - print the titles of bills that contain "Transportation" in the "subjects" list
     '''
-    response = urllib2.urlopen('http://openstates.org/api/v1/bills/?state=%s&&search_window=session&subject=%s&apikey=%s' % (state, subjects, API_KEY))
+    response = urllib2.urlopen('http://openstates.org/api/v1/bills/?state=%s&search_window=session&subject=%s&apikey=%s' % (state, subjects, API_KEY))
     json_object = json.load(response)
 
     for bills in json_object:
