@@ -18,8 +18,6 @@ def get_bills(state, subjects):
     response = urllib2.urlopen('http://openstates.org/api/v1/bills/?state=%s&&search_window=session&subject=%s&apikey=%s' % (state, subjects, API_KEY))
     json_object = json.load(response)
 
-    print json_object
-
     for bills in json_object:
       print bills['title'] 
 
